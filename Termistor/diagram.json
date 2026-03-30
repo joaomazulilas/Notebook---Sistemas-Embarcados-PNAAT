@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -83.8,
+      "left": -29.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ntc1:GND", "esp:GND.2", "black", [ "h48", "v86.4" ] ],
+    [ "esp:3V3", "ntc1:VCC", "red", [ "h139.39", "v-76.8" ] ],
+    [ "ntc1:OUT", "esp:34", "green", [ "v28.7", "h-163.2", "v76.8" ] ]
+  ],
+  "dependencies": {}
+}
